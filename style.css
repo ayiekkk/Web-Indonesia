@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    height: 75px;
+    align-items: center;
+    background-color: lightblue;
+}
+
+nav .logo {
+    font-family: "Delius Swash Caps", cursive;
+    letter-spacing: 5px;
+}
+
+nav ul {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    list-style: none;
+}
+
+nav ul li {
+    font-size: 1em;
+    color: aqua;
+}
+
+nav ul li:hover {
+    cursor: pointer;
+    color: cadetblue;
+}
+
+/* Hamburger Icon */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -6px;
+    top: -3px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: aqua;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* Hamburger Animation */
+
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform: scale(0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+
+/* Responsive Breakpoint */
+
+/* Ukuran Tablet */
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+
+/* Ukuran Mobile */
+@media screen and (max-width: 576px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 70%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: lightblue;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
+    }
+
+    nav ul.slide {
+        transform: translateX(0);
+    }
+}
