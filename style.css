@@ -95,6 +95,137 @@ nav ul li:hover {
 }
 
 
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+.box {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: movedown 2s forwards;
+    opacity: 0;
+}
+
+@keyframes movedown {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.box:nth-child(1) {
+    animation-delay: 0s;
+}
+.box:nth-child(2) {
+    animation-delay: 1s;
+}
+.box:nth-child(3) {
+    animation-delay: 2s;
+}
+.box:nth-child(4) {
+    animation-delay: 3s;
+}
+.box:nth-child(5) {
+    animation-delay: 4s;
+}
+.box:nth-child(6) {
+    animation-delay: 5s;
+}
+
+.text-box {
+    padding: 20px 30px;
+    background: gray;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.left-box {
+    left: 0;
+}
+
+.right-box {
+    left: 50%;
+}
+
+.dot {
+    position: absolute;
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+}
+
+.right-box .dot {
+    left: -20px;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: #666;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1;
+    animation: moveline 6s forwards;
+}
+
+@keyframes moveline {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.text-box h2 {
+    font-weight: 600;
+}
+
+.text-box small {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.left-box-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid gray;
+    right: -15px;
+}
+
+.right-box-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid gray;
+    left: -15px;
+}
+
 /* Responsive Breakpoint */
 
 /* Ukuran Tablet */
@@ -103,6 +234,11 @@ nav ul li:hover {
         width: 50%;
     }
 }
+
+/* Ukuran Timeline
+@media screen and (max-width: 600px) {
+    
+} */
 
 /* Ukuran Mobile */
 @media screen and (max-width: 576px) {
@@ -131,4 +267,43 @@ nav ul li:hover {
         opacity: 1;
         transform: translateX(0);
     }
+
+    .timeline {
+        margin: 50px auto;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .box {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+
+    .text-box {
+        font-size: 13px;
+    }
+
+    .text-box small {
+        margin-bottom: 10px;
+    }
+
+    .right-box {
+        left: 0;
+    }
+
+    .left-box .dot,
+    .right-box .dot {
+        left: 10px;
+    }
+
+    .left-box-arrow,
+    .right-box-arrow {
+        border-right: 15px solid gray;
+        border-left: 0;
+        left: -15px;
+    }
+
 }
