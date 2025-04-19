@@ -226,6 +226,60 @@ nav ul li:hover {
     left: -15px;
 }
 
+.main-container {
+    width: 100%;
+    /* background-color: lightslategray; */
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.main-content {
+    flex: 5;
+    order: 2;
+    border: 2px solid lightslategrey;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: justify;
+}
+
+.main-content h1 {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.side-content {
+    flex: 2;
+    order: 1;
+    border: 2px solid lightsalmon;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.card {
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.card .card-header {
+    height: 150px;
+    background-color: #666;
+    border-radius: 5px;
+}
+
+.card-content h3 {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.card .card-content {
+    text-align: center;
+    padding-bottom: 20px;
+    text-align: justify;
+}
+
+
 /* Responsive Breakpoint */
 
 /* Ukuran Tablet */
