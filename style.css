@@ -1,5 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --bg-primary: #102830;
+    --bg-secondary: #024751;
+    --bg-tertiary: #FFF0B5;
+    --br-primary: #00D47E;
+    --br-secondary: #AFF9C7;
+    --txt-primary: #EDFFF8;
+    --font-primary: "Almendra", serif;
+    --font-secondary: "Merriweather", serif;
+}
+
+
+
+
 
 * {
     margin: 0;
@@ -12,7 +27,7 @@ html {
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-secondary);
     overflow-x: hidden;
 }
 
@@ -25,8 +40,9 @@ nav {
 }
 
 nav .logo {
-    font-family: "Delius Swash Caps", cursive;
-    letter-spacing: 5px;
+    font-family: var(--font-primary);
+    letter-spacing: 10px;
+    font-size: 1.5em;
 }
 
 nav ul {
@@ -36,12 +52,13 @@ nav ul {
     list-style: none;
 }
 
-nav ul li {
+nav ul li a{
     font-size: 1em;
     color: aqua;
+    text-decoration: none;
 }
 
-nav ul li:hover {
+nav ul li a:hover {
     cursor: pointer;
     color: cadetblue;
 }
