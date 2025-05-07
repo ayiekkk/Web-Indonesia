@@ -29,6 +29,7 @@ html {
 body {
     font-family: var(--font-secondary);
     overflow-x: hidden;
+    background-color: var(--bg-secondary);
 }
 
 nav {
@@ -36,11 +37,12 @@ nav {
     justify-content: space-around;
     height: 75px;
     align-items: center;
-    background-color: lightblue;
+    background-color: var(--bg-primary);
 }
 
 nav .logo {
     font-family: var(--font-primary);
+    color: var(--txt-primary);
     letter-spacing: 10px;
     font-size: 1.5em;
 }
@@ -54,7 +56,7 @@ nav ul {
 
 nav ul li a{
     font-size: 1em;
-    color: aqua;
+    color: var(--txt-primary);
     text-decoration: none;
 }
 
@@ -88,7 +90,7 @@ nav ul li a:hover {
     display: block;
     width: 28px;
     height: 3px;
-    background-color: aqua;
+    background-color: var(--txt-primary);
     border-radius: 3px;
     transition: all 0.5s;
 }
@@ -163,7 +165,7 @@ nav ul li a:hover {
 
 .text-box {
     padding: 20px 30px;
-    background: gray;
+    background: var(--br-secondary);
     position: relative;
     border-radius: 6px;
     font-size: 15px;
@@ -179,7 +181,7 @@ nav ul li a:hover {
 
 .dot {
     position: absolute;
-    background-color: black;
+    background-color: var(--bg-tertiary);
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -196,7 +198,7 @@ nav ul li a:hover {
     content: '';
     position: absolute;
     width: 6px;
-    background: #666;
+    background: var(--bg-tertiary);
     height: 100%;
     top: 0;
     left: 50%;
@@ -231,7 +233,7 @@ nav ul li a:hover {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid gray;
+    border-left: 15px solid var(--br-secondary);
     right: -15px;
 }
 
@@ -243,61 +245,62 @@ nav ul li a:hover {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid gray;
+    border-right: 15px solid var(--br-secondary);
     left: -15px;
 }
 
 .main-container {
-    width: 100%;
-    /* background-color: lightslategray; */
+    width: 70%;
+    margin: 20rem auto;
     display: flex;
-    padding: 20px;
-    gap: 20px;
+    gap: 10px;
+    /* background-color: black; */
+    color: var(--txt-primary);
 }
 
-.main-content {
-    flex: 5;
-    order: 2;
-    border: 2px solid lightslategrey;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: justify;
-}
-
-.main-content h1 {
-    text-align: center;
-    padding: 15px 0;
-}
-
-.side-content {
+.main {
+    display: flex;
+    flex-direction: column;
     flex: 2;
-    order: 1;
-    border: 2px solid lightsalmon;
-    padding: 15px;
-    border-radius: 8px;
 }
 
-.card {
-    background-color: #eee;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-.card .card-header {
-    height: 150px;
-    background-color: #666;
+.canon-event {
+    flex: 2;
+    margin-bottom: 10px;
+    border: 2px solid var(--br-primary);
+    padding: 10px;
     border-radius: 5px;
 }
 
-.card-content h3 {
-    text-align: center;
-    padding: 15px 0;
+.strategy {
+    flex: 2;
+    border: 2px solid var(--br-primary);
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.card .card-content {
+
+
+.side {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card {
+    margin-bottom: 10px;
+    border: 2px solid var(--br-primary);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card:nth-child(1) ul li {
+    list-style: none;
+}
+.card:nth-child(1) h3{
     text-align: center;
-    padding-bottom: 20px;
-    text-align: justify;
+    font-size: 25px;
+    margin: 10px;
 }
 
 /* .title {
@@ -314,18 +317,20 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     padding: 0px 100px 100px 100px;
+    /* margin-bottom: 10px; */
 }
 
 .column {
     flex: 25;
     max-width: 25%;
+    /* margin: 10px; */
 }
 
 .img-hover-zoom {
     height: auto;
     border-radius: 15px;
     overflow: hidden;
-    border: 5px solid #fff;
+    border: 2px solid var(--br-primary);
 }
 
 .img-hover-zoom img {
