@@ -419,6 +419,7 @@ aside {
         align-items: center;
         justify-content: space-evenly;
         background-color: var(--bg-secondary);
+        color: var(--txt-primary);
         z-index: 20;
         transform: translateX(100%);
         transition: all 1s;
