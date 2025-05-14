@@ -2,12 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-    --bg-primary: #102830;
-    --bg-secondary: #024751;
-    --bg-tertiary: #FFF0B5;
-    --br-primary: #00D47E;
-    --br-secondary: #AFF9C7;
-    --txt-primary: #EDFFF8;
+    --bg-primary: #1E201E;
+    --bg-secondary: #3C3D37;
+    --br-primary: #697565;
+    --txt-primary: #ECDFCC;
     --font-primary: "Almendra", serif;
     --font-secondary: "Merriweather", serif;
 }
@@ -29,7 +27,7 @@ html {
 body {
     font-family: var(--font-secondary);
     overflow-x: hidden;
-    background-color: var(--bg-secondary);
+    background-color: #ddd;
 }
 
 nav {
@@ -40,11 +38,12 @@ nav {
     background-color: var(--bg-primary);
 }
 
-nav .logo {
+.logo a {
     font-family: var(--font-primary);
     color: var(--txt-primary);
     letter-spacing: 10px;
     font-size: 1.5em;
+    text-decoration: none;
 }
 
 nav ul {
@@ -58,11 +57,16 @@ nav ul li a{
     font-size: 1em;
     color: var(--txt-primary);
     text-decoration: none;
+    padding: 10px;
+    transition: .5s ease;
+    border-radius: 10px;
+    letter-spacing: 1.5px;
 }
 
 nav ul li a:hover {
     cursor: pointer;
-    color: cadetblue;
+    background-color: var(--bg-secondary);
+    text-decoration: underline;
 }
 
 /* Hamburger Icon */
@@ -117,8 +121,6 @@ nav ul li a:hover {
     transform: rotate(-45deg) translate(-1px, 0);
 }
 
-
-
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -165,10 +167,13 @@ nav ul li a:hover {
 
 .text-box {
     padding: 20px 30px;
-    background: var(--br-secondary);
+    background: var(--bg-secondary);
     position: relative;
     border-radius: 6px;
     font-size: 15px;
+    color: var(--txt-primary);
+    font-weight: 100;
+    letter-spacing: 1px;
 }
 
 .left-box {
@@ -181,7 +186,7 @@ nav ul li a:hover {
 
 .dot {
     position: absolute;
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-secondary);
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -198,7 +203,7 @@ nav ul li a:hover {
     content: '';
     position: absolute;
     width: 6px;
-    background: var(--bg-tertiary);
+    background: var(--bg-secondary);
     height: 100%;
     top: 0;
     left: 50%;
@@ -233,7 +238,7 @@ nav ul li a:hover {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid var(--br-secondary);
+    border-left: 15px solid var(--bg-secondary);
     right: -15px;
 }
 
@@ -245,85 +250,62 @@ nav ul li a:hover {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid var(--br-secondary);
+    border-right: 15px solid var(--bg-secondary);
     left: -15px;
 }
 
 .main-container {
-    width: 70%;
-    margin: 20rem auto;
     display: flex;
-    gap: 10px;
-    /* background-color: black; */
-    color: var(--txt-primary);
+    padding: 10px;
+    height: 100%;
+    margin: 20px 0;
 }
 
-.main {
+main {
     display: flex;
     flex-direction: column;
     flex: 2;
+    gap: 10px;
+    margin-right: 10px;
 }
 
-.canon-event {
-    flex: 2;
-    margin-bottom: 10px;
-    border: 2px solid var(--br-primary);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.strategy {
-    flex: 2;
-    border: 2px solid var(--br-primary);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-
-
-.side {
+aside {
     display: flex;
     flex-direction: column;
     flex: 1;
+    gap: 10px;
 }
 
-.card {
-    margin-bottom: 10px;
-    border: 2px solid var(--br-primary);
+.kotak {
+    border: 3px solid var(--br-primary);
     padding: 10px;
     border-radius: 5px;
+    color: var(--bg-primary);
+    letter-spacing: 1px;
+    line-height: 1.3em;
 }
 
-.card:nth-child(1) ul li {
-    list-style: none;
-}
-.card:nth-child(1) h3{
+.title {
     text-align: center;
-    font-size: 25px;
-    margin: 10px;
+    margin: 50px;
+    font-family: var(--font-primary);
+    color: var(--bg-primary);
+    font-size: 2.5em;
+    font-weight: 500;
+    letter-spacing: 3px;
 }
-
-/* .title {
-    text-align: center;
-    padding: 1em;
-}
-
-.title h1 {
-    font-family: cursive;
-    font-size: 50px;
-} */
 
 .row {
     display: flex;
     flex-wrap: wrap;
     padding: 0px 100px 100px 100px;
     /* margin-bottom: 10px; */
+    /* gap: 10px; */
 }
 
 .column {
     flex: 25;
     max-width: 25%;
-    /* margin: 10px; */
 }
 
 .img-hover-zoom {
@@ -344,6 +326,7 @@ nav ul li a:hover {
 .img-hover-zoom:hover img {
     transform: scale(1.5);
 }
+
 
 @media screen and (max-width: 800px) {
     .column {
